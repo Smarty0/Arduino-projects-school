@@ -7,13 +7,14 @@ void setup()
     for(lightpin = 0; lightpin<8; lightpin++)
       {
         pinMode(LedPins[lightpin], OUTPUT);
+        digitalWrite(LedPins[lightpin], HIGH);
       }
 }
 
 void loop() 
 {
 //main running loop
-    for(lightpin = 0; lightpin < 8; lightpin++)
+    for(lightpin = 0; lightpin < 7; lightpin++)
        {
        digitalWrite(LedPins[lightpin], LOW);
        delay(timer);
@@ -27,7 +28,7 @@ void loop()
       }
 
     
-    for(lightpin = 8; lightpin > 0; lightpin--)
+    for(lightpin = 7; lightpin > 0; lightpin--)
        {
          digitalWrite(LedPins[lightpin], LOW);
           delay(timer);
