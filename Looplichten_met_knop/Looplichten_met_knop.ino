@@ -5,7 +5,7 @@
   
   Description: Een test programma waarmee input van 3 verschillende pinnen gelezen kan worden.
   
-  Revision: 1.0.0
+  Revision: 1.0.1
 */
  
 // include libraries
@@ -36,11 +36,11 @@ void setup()
 {   
     for (int led = 0; led < 8; led++)
       {
-        pinMode(LedArray1[led*2+23], OUTPUT);
-        digitalWrite(LedArray1[led*2+23], HIGH);
+        pinMode(LedArray1[led], OUTPUT);
+        digitalWrite(LedArray1[led], HIGH);
 
-        pinMode(LedArray2[led*2+39], OUTPUT);
-        digitalWrite(LedArray2[led*2+39], HIGH);
+        pinMode(LedArray2[led], OUTPUT);
+        digitalWrite(LedArray2[led], HIGH);
 
         pinMode(LedArray3[led], OUTPUT);
         digitalWrite(LedArray3[led], HIGH);
