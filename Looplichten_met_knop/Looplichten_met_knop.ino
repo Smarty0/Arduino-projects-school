@@ -60,7 +60,7 @@ void loop()
   c = digitalRead(10);
 
   if(a == 1) //looplamp1
-    {
+    {        // Set variables to get the required output pin for LedArray1 23 - 37
        b = 0;
        c = 0;
        z = 23;
@@ -69,7 +69,7 @@ void loop()
        looplamp();
     }
   if(b == 1) //looplamp2
-    {
+    {        // Set variables to get the required output pin for LedArray2 39 - 53
        a = 0;
        c = 0;
        z = 39;
@@ -78,7 +78,7 @@ void loop()
        looplamp();
     }
   if(c == 1) //looplamp3
-    {
+    {        // Set variables to get the required output pin for LedArray3 0 - 7
        a = 0;
        b = 0;
        z = 0;
@@ -88,7 +88,9 @@ void loop()
      }
 }
 
-// Function or subroutine
+// Fuction Looplamp Main Function
+// Required output pins are selected using several variables
+
 void looplamp() 
 {
  for(lightpin = 0; lightpin < 7; lightpin++)
