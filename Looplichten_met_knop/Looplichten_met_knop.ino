@@ -5,7 +5,7 @@
   
   Description: Een test programma waarmee input van 3 verschillende pinnen gelezen kan worden.
   
-  Revision: 1.0.1
+  Revision: 1.0.2
 */
  
 // include libraries
