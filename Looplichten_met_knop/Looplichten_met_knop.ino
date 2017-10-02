@@ -1,9 +1,9 @@
 /*
-  Name: INPUT test
+  Name: LoopLampen
   Date: 27-09-2017
   Author: Marthijn Vlierman
   
-  Description: Een test programma waarmee input van 3 verschillende pinnen gelezen kan worden.
+  Description: 3 verschillende array's waarmee lampjes kunnen worden aangestuurd.
   
   Revision: 1.0.2
 */
