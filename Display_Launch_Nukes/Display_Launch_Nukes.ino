@@ -17,6 +17,7 @@
 
 // ----- Declare subroutines and/or functions ----- 
 void Count_Down_T_Minus_TEN();
+void Kaboom();
 
 // ----- Declare Global Variables ----- 
 LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
@@ -33,6 +34,7 @@ void setup()
 // Main loop
 void loop() 
 {
+    delay(2000);
     lcd.setCursor(0,0);
     lcd.print("Ready to launch nukes");
   // scroll 37 positions (display length + string length) to the left
@@ -59,4 +61,14 @@ void Count_Down_T_Minus_TEN()
     delay(1000);
     lcd.clear();
   }
+  Kaboom();
 }
+void Kaboom()
+{
+  for(int counter = 0; counter < 15; counter++)
+ { 
+  lcd.setCursor(6,0);
+  lcd.print("Kaboom");
+ }
+}
+
