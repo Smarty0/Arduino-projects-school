@@ -5,7 +5,7 @@
   
   Description: Display to demonstrate different functions
   
-  Revision: 0.0.1
+  Revision: 1.0.0
 */
  
 // include libraries
@@ -24,33 +24,30 @@ LiquidCrystal lcd(8, 9, 4, 5, 6, 7);
 int timer = 1000;
 byte a = 0;
 
-// Setup
 void setup() 
 {   
     pinMode(A0, INPUT);
     lcd.begin(16, 2);
 }
 
-// Main loop
 void loop() 
 {
-    delay(2000);
-    lcd.setCursor(0,0);
+    delay(200);
+    lcd.setCursor(2,0);
+    delay(500);
     lcd.print("Ready to launch nukes");
-  // scroll 37 positions (display length + string length) to the left
   for (int positionCounter = 0; positionCounter < 37; positionCounter++)
   {
-    // scroll one position left:
-    lcd.scrollDisplayLeft();
-    // wait:
+    a = digitalRead(A0);      // read for input
+    lcd.scrollDisplayLeft();  // scroll displayLeft
     delay(300);
-    a = digitalRead(A0);
+    
   if (a == 0)
+  
   Count_Down_T_Minus_TEN();
   }  
 }
 
-// Function or subroutine
 void Count_Down_T_Minus_TEN() 
 {
   lcd.clear();  
@@ -63,12 +60,27 @@ void Count_Down_T_Minus_TEN()
   }
   Kaboom();
 }
+
 void Kaboom()
 {
   for(int counter = 0; counter < 15; counter++)
  { 
-  lcd.setCursor(6,0);
+  lcd.clear();
+  lcd.setCursor(4,0);
   lcd.print("Kaboom");
+  delay(200);
+  lcd.clear();
+  lcd.setCursor(7,0);
+  lcd.print("Kaboom");
+  delay(200);
+  lcd.clear();
+  lcd.setCursor(7,1);
+  lcd.print("Kaboom");
+  delay(200);
+  lcd.clear();
+  lcd.setCursor(4,1);
+  lcd.print("Kaboom");
+  delay(200);
  }
+  lcd.clear();
 }
-
