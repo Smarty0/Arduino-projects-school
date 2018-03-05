@@ -3,53 +3,69 @@
   Date:20-02-2018
   Author: Marthijn Vlierman
   
-  Description: Test programma om het lcd scherm en de sensoren te testen.
+  Description: Test programma om de sensoren te testen en data te versturen naar de seriele monitor
   
   Revision: 0.1
 */
  
 // include libraries
-#include <LCD.h>
-#include <LiquidCrystal_I2C.h>
 
 // ----- Declare Constants ----- 
 
 // ----- Declare Objects ----- 
 
 // ----- Declare subroutines and/or functions ----- 
-DataWrite(); // Write any global data to the display
+void analog_read();
 // ----- Declare Global Variables ----- 
 int Afstandsensor1 = 0;
 int Afstandsensor2 = 0;
 int Lichtsensor1 = 0;
 int Lichtsensor2 = 0;
+int Knop1 = 0;
+int Knop2 = 0;
 
 // Setup
 void setup() 
-{   
-  lcd.begin(16, 2);
-  lcd.setBacklight(HIGH);
-  lcd.setCursor(0,0);
-  lcd.print("AS1:0 AS2:0");
-  lcd.setCursor(0,1);
-  lcd.print("LS1:0 LS2:0");
+{
+  Serial.begin(9600);   
+  delay(500);
+  Serial.print("Serial bus ready");
+  delay(500);
   pinMode(9,OUTPUT);
   pinMode(10,OUTPUT);
+  
   pinMode(A2,INPUT);
   pinMode(A3,INPUT);
+  
+  pinMode(A1,INPUT);
+  pinMode(A0,INPUT);
+  
+  pinMode(8, INPUT);
+  pinMode(22, INPUT);
 }
 
 // Main loop
 void loop() 
 {  
+  Serial.println(Lichtsensor1);
+  Serial.println(Lichtsensor2);
+  Serial.println(Knop1);
+  Serial.println(Knop2);
+  analog_read();
   
 }
 
-// Function or subroutine
-void DataWrite() 
+void analog_read()
 {
-  lcd.clear();
-  delay(200);
-  
-  
+ delay(1000);
+ 
+ Lichtsensor1 = analogRead(A0);
+
+ Lichtsensor2 = analogRead(A1);
+ 
+ Knop1 = digitalRead(8);
+
+ Knop2 = digitalRead(22);
+ 
 }
+
