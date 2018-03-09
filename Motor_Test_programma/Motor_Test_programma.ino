@@ -6,10 +6,6 @@
   Description: BBR Motor test programma.
   Vooruit 5 seconden
   Achteruit 5 seconden
-  Linkerwiel vooruit 2 seconden
-  Linkerwiel achteruit 2 seconden
-  Rechterwiel vooruit 2 seconden
-  Rechterwiel achteruit 2 seconden
   
   Revision:0.1
 */
@@ -21,13 +17,16 @@
 // ----- Declare Objects ----- 
 
 // ----- Declare subroutines and/or functions ----- 
-
+ void Forward();
+ void Backward();
 // ----- Declare Global Variables ----- 
     
 
 // Setup
 void setup() 
 {   
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
   pinMode(14, OUTPUT);
   pinMode(16, OUTPUT);
   
@@ -36,20 +35,26 @@ void setup()
 // Main loop
 void loop() 
 {  
-    motor_test();
-    delay(10000);
+    Forward();
+    delay(5000);
+    Backward();
+    delay(5000);
     
 }
 
 // Function or subroutine
-void Motor_test() 
+void Forward() 
 {
-    digitalWrite
+    digitalWrite(14, LOW);
+    digitalWrite(16, LOW);
+    analogWrite(5,255);
+    analogWrite(6, 255);
 }
 
-void Buzzer_test()
+void Backward()
 {
-
+    digitalWrite(14, HIGH);
+    digitalWrite(16, HIGH);
+    analogWrite(5,0);
+    analogWrite(6, 0 );
 }
-}
-
