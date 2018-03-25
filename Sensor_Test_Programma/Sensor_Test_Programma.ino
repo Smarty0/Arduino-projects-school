@@ -5,7 +5,7 @@
   
   Description: Test programma om de sensoren te testen en data te versturen naar de seriele monitor
   
-  Revision: 0.1
+  Revision: 0.1.0
 */
  
 // include libraries
@@ -77,9 +77,9 @@ void loop()
   Serial.println(afstand1);
   Serial.print("afstand2  ");
   Serial.println(afstand2);
-  Serial.print("LijnSensor1");
+  Serial.print("LijnSensor1  ");
   Serial.println(Lijnvolger1);
-  Serial.print("LijnSensor2");
+  Serial.print("LijnSensor2  ");
   Serial.println(Lijnvolger2);
 
   delay(1000);
