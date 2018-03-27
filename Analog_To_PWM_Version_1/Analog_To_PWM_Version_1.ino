@@ -1,5 +1,3 @@
- 
-
 /*
   Name: Arduino Analog to PWM
   Date:09-03-2018
@@ -20,11 +18,10 @@
 
 // ----- Declare Global Variables ----- 
 int A = 0;   
-
+byte Button = 0;
 // Setup
 void setup() 
 {   
-  Serial.begin(9600);
   pinMode(A0, INPUT);
   myservo.attach(6);
 }
@@ -32,16 +29,11 @@ void setup()
 // Main loop
 void loop()
 {  
+  
 
   A = analogRead(A0);
   
-  Serial.print("Analog IN  ");
-  Serial.println(A);
-  
   A = map(A, 0, 1024, 1000, 2000); // 0 = 0,6ms, 180 = 2,4ms
-  
-  Serial.print("0,180 waarde  ");
-  Serial.println(A);
   
   myservo.writeMicroseconds(A);
   //delay(200);
